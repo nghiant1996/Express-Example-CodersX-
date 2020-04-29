@@ -3,13 +3,25 @@ var app = express();
 
 var port = 3000;
 
+app.set('view engine', 'pug');
+app.set('views','./views');
+
+
 app.get('/', function(request, response) {
-	response.send('<h1>CodersX Tokyo!</h1>');
+	response.render('index', {
+		name: 'Nghia NT'
+	});
+});
+
+app.get('/users', function (req, res) {
+	res.render('users/index', {
+		users: [
+			{id: 1, name: 'Nghia'},
+			{id: 2, name: 'Cuong'},
+		]
+	})
 })
 
-app.get('/user', function(req, res){
-	res.send('User List');
-})
 
 app.listen(port, function() {
 	console.log('Serve listening on port ' + port);
