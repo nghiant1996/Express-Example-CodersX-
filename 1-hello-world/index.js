@@ -42,6 +42,7 @@ app.get('/users', function (req, res) {
 	res.render('users/index', {
 		users: db.get('users').value()
 	})
+	// console.log(db.get('users'))
 });
 
 app.get('/users/create', function(req,res) {
@@ -51,6 +52,7 @@ app.get('/users/create', function(req,res) {
 app.post('/users/create', function(req,res) {
 	db.get('users').push(req.body).write();
 	res.redirect('/users');
+	
 })
 
 app.listen(port, function() {
