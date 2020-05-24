@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+  h1 Transactions
+  
+  table.table
+    tr
+      th User Id
+      th Book Id
+      th Completed
+    each tran in trans
+      tr 
+        td= tran.userId
+        td= tran.bookId
+        td= tran.isCompleted
+  
