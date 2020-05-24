@@ -16,21 +16,21 @@
       "name": "Nghia",
       "id": "FdBG4Ifxv",
       "email": "nghia@gmail.com",
-      "password": "$2b$10$2DteD.hehQetnaAo/Hn/4.irNqm2wzO2kGVBBfq0QQ.aIrH8pS2cq",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": true
     },
     {
       "name": "Thuy",
       "id": "ajiE5UaLf",
       "email": "thuy@gmail.com",
-      "password": "$2b$10$2DteD.hehQetnaAo/Hn/4.irNqm2wzO2kGVBBfq0QQ.aIrH8pS2cq",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     },
     {
       "name": "Cuong",
       "email": "cuong@gmail.com",
       "id": "NUk7xWSIY",
-      "password": "$2b$10$2DteD.hehQetnaAo/Hn/4.irNqm2wzO2kGVBBfq0QQ.aIrH8pS2cq",
+      "password": "4297f44b13955235245b2497399d7a93",
       "isAdmin": false
     }
   ],
