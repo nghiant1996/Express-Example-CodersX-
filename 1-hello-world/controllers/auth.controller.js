@@ -2,8 +2,8 @@ var db = require('../db.js');
 var shortid = require('shortid');
 var md5 = require('md5');
 
-var bcrypt = require('bcrypt');
-var saltRound = 10;
+// var bcrypt = require('bcrypt');
+// var saltRound = 10;
 
 module.exports.login = function(req, res) {
 	res.render('auth/login');
