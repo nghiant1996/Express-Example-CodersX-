@@ -23,7 +23,7 @@ app.set('views','./views');
 app.set('view engine', 'pug');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-app.use(cookieParser('da8oqh12JA')); //'da8oqh12JA': secret, phuc vu cho signed Cookie, doc trong tai lieu
+app.use(cookieParser());
 
 
 // app.use(function(req, res, next) {
