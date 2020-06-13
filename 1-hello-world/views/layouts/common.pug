@@ -12,6 +12,13 @@ html
             a.nav-link(href='/') Home
           li.nav-item
             a.nav-link(href='/users') User
+          li.nav-item
+            a.nav-link(href='/product') Products
+          li.nav-item
+            a.nav-link(href='/cart') Cart
+          li.nav-item
+            if cartCount
+              p.nav-link= cartCount
       if user
         p= user.name
     .container.pt-5

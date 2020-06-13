@@ -1,4 +1,4 @@
-console.log(process.env);
+require('dotenv').config()
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -6,8 +6,12 @@ var cookieParser = require('cookie-parser');
 
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
+var productRoute = require('./routes/product.route');
+var cartRoute = require('./routes/cart.route');
+
 
 var authMiddleware = require('./middlewares/auth.middleware');
+var sessionMiddleware = require('./middlewares/session.middleware')
 
 var port = 3000;
 var app = express(); 
@@ -21,15 +25,9 @@ app.set('views','./views');
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-app.use(cookieParser('hkajsdfhkjhk3s'));
+app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(sessionMiddleware);
 
-
-// app.use(function(req, res, next) {
-// 	res.clearCookie('user-id');
-// 	var count = req.cookies.count;
-// 	console.log(count);
-// 	next();
-// })
 
 app.use(express.static('public'));
 
@@ -43,6 +41,8 @@ app.get('/', function(request, response) {
 
 app.use('/users', authMiddleware.requireAuth, userRoute);  
 app.use('/auth', authRoute);
+app.use('/product', productRoute);
+app.use('/cart', cartRoute);
 
 
 

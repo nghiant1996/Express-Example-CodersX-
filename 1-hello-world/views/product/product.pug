@@ -11,28 +11,16 @@ block content
 				.card-body
 					h5.card-title= product.name
 					p.card-text= product.description
-					a.btn.btn-primary(href='#') Buy
+					a.btn.btn-primary(href='/cart/add/'+ product.id) Add to cart
 
 		nav(aria-label='Search result page')
 			ul.pagination
 				li.page-item
 					a.page-link(href=`?page=${pre}`) Previous
-				li.page-item
-					a.page-link(href='?page=1') 1
-				li.page-item
-					a.page-link(href='?page=2') 2
-				li.page-item
-					a.page-link(href='?page=3') 3
+				each number in numberPages
+					li.page-item
+						a.page-link(href=`?page=${number}`)= number
 				li.page-item
 					a.page-link(href=`?page=${next}`) Next
 
-					
-			
-
-
-
-
-
-
-	
-
+		

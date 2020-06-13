@@ -1,7 +1,7 @@
 var express = require('express');
 
-var router = express.Router();
 var controller = require('../controllers/auth.controller.js');
+var router = express.Router();
 
 router.get('/login', controller.login);
 

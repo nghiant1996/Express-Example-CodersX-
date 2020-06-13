@@ -1,11 +1,16 @@
 // var db = require('../db.js')// Co 2 dau cham tuc la db nam n
 
 var express = require('express');
+var multer  = require('multer');
 
-var router = express.Router();
+
 var controller = require('../controllers/user.controller.js');
 var validate = require('../validates/user.validate.js')
 var authMiddleware = require('../middlewares/auth.middleware.js');
+
+var upload = multer({ dest: './public/uploads/' });
+
+var router = express.Router();
 
 
 // function middleware1(req, res, next){
@@ -35,6 +40,9 @@ router.get('/create', controller.create);
 
 router.get('/:id', controller.get);
 
-router.post('/create', validate.postCreate, controller.postCreate);
+router.post('/create', 
+	upload.single('avatar'), 
+	validate.postCreate, 
+	controller.postCreate);
 module.exports = router
 
