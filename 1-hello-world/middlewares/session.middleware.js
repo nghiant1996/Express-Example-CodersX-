@@ -18,13 +18,10 @@ module.exports = function(req,res,next) {
 	var currentSession = db.get('sessions').find({id: req.signedCookies.sessionId}).value();
 	var cartCount = 0;
 	var selectedProducts = currentSession.cart;
-	console.log(selectedProducts)
+
 	for(var product in selectedProducts){
 		cartCount += selectedProducts[product];
 	}
-
-	console.log(cartCount)
-
 
 	res.locals.cartCount = cartCount;
 
